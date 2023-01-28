@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import "~normalize.css";
+@import "src/app/shared/scss/variables";
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  padding-top: $padding * 3;
+}
+
+h1 {
+  padding-left: 32px;
+}
+form {
+  padding: 16px 32px;
+  .input-field {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    margin-bottom: 8px;
+    height: 32px;
+    border-color: #1776d2;
+    box-shadow: none;
+    padding: 0 4px;
+  }
+  .input-error {
+    border: 1px dashed red;
+    padding: 0 8px;
+    margin-bottom: 4px;
+  }
+  button[type="submit"], button[type="file"] {
+    min-width: 100px;
+    min-height: 32px;
+    margin-top: 12px;
+    border: 2px solid #1776d2;
+    background: #ffffff;
+    color: #1776d2;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      border: 2px solid #ffffff;
+      background: #1776d2;
+      color: #ffffff;
+      transition: 0.3s;
+    }
+  }
+}
+

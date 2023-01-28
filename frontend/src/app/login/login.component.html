@@ -1,0 +1,51 @@
+<h1>Login</h1>
+
+<form
+  class="login"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="login-content">
+    <div class="input-field" [ngClass]="{'invalid': email?.invalid && email?.touched}">
+      <label for="email">Email</label>
+      <input
+        formControlName="email"
+        id="email"
+        type="email"
+        required
+      >
+      <span
+        class="input-error"
+        *ngIf="email?.touched"
+      >
+        <span *ngIf="email?.errors?.['required']">Email need to be not an empty</span>
+        <span *ngIf="email?.errors?.['email']">Enter a valid email address</span>
+      </span>
+
+    </div>
+    <div class="input-field" [ngClass]="{'invalid': password?.invalid && password?.touched}">
+      <label for="password">Password</label>
+      <input
+        formControlName="password"
+        id="password"
+        type="password"
+        required
+      >
+      <span
+        class="input-error"
+        *ngIf="email?.touched"
+      >
+        <span *ngIf="password?.errors?.['required']">Password need to be not an empty</span>
+        <span *ngIf="
+        password?.errors?.['minlength'] && password?.errors?.['minlength']"
+        >The password must be more than 6 symbols</span>
+      </span>
+    </div>
+    <div class="button-container">
+      <button
+        type="submit"
+        class="button"
+      >Sign In</button>
+    </div>
+  </div>
+</form>

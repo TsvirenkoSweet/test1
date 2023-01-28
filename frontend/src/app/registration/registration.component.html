@@ -1,0 +1,45 @@
+<h1>Registration</h1>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="input-field">
+    <label for="firstName">First Name: </label>
+    <input id="firstName" type="text" formControlName="firstName">
+    <div class="input-error" *ngIf="firstName?.touched && firstName?.errors?.['required']">
+      First Name is required.
+    </div>
+  </div>
+  <div class="input-field">
+    <label for="lastName">Last Name: </label>
+    <input id="lastName" type="text" formControlName="lastName">
+    <div class="input-error" *ngIf="lastName?.touched && lastName?.errors?.['required']">
+      Last Name is required.
+    </div>
+  </div>
+  <div class="input-field">
+    <label for="email">Email: </label>
+    <input id="email" type="text" formControlName="email">
+    <div class="input-error" *ngIf="email?.touched && email?.errors?.['required']">
+      Email is required.
+    </div>
+  </div>
+  <div class="input-field">
+    <label for="password">Password: </label>
+    <input id="password" type="password" formControlName="password">
+    <div class="input-error" *ngIf="password?.touched && password?.errors?.['required']">
+      Password is required.
+    </div>
+  </div>
+  <div class="input-field">
+    <label for="confirmPassword">Confirm password: </label>
+    <input id="confirmPassword" type="password" formControlName="confirmPassword">
+    <div class="input-error" *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']">
+      Password is required.
+    </div>
+    <div class="input-error" *ngIf="password?.touched && confirmPassword?.touched && !passwordMismatch">
+      Password and Confirm Password should match
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+
